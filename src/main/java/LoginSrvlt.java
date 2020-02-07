@@ -35,18 +35,11 @@ public class LoginSrvlt extends HttpServlet {
             String usuario = request.getParameter("usuario");
             String password = request.getParameter("password");
             
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginSrvlt</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Hola " + usuario + "</h1>");
-            out.println("<p>Tu password es: " + password + "</p>");
-            out.println("</body>");
-            out.println("</html>");
-            
-            
+            if (usuario != null && password != null){
+                response.sendRedirect("Inicio.jsp");
+            }else{
+                response.sendRedirect("index.html");
+            }
             
         }
     }
